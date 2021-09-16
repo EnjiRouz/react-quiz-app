@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from "../../axios/axios-quiz";
 import classes from "./QuizCreator.module.css";
 import {createControl, isFromValid, isValueValid} from "../../form/formFramework";
 import Button from "../../components/UI/Button/Button";
@@ -22,6 +23,7 @@ function createFormControls() {
 
 function createOptionControl(optionNumber) {
     return createControl({
+        id: optionNumber,
         label: `Answer #${optionNumber}`,
         errorMessage: "Answer text is Empty"
     }, {required: true})
@@ -41,8 +43,6 @@ class QuizCreator extends Component {
     };
 
     addQuestionHandler = event => {
-        event.preventDefault();
-
         const quiz = this.state.quiz.concat();
         const quizId = quiz.length + 1;
 
@@ -55,7 +55,7 @@ class QuizCreator extends Component {
                 {text: option1.value, id: option1.id},
                 {text: option2.value, id: option2.id},
                 {text: option3.value, id: option3.id},
-                {text: option4.value, id: option4.id},
+                {text: option4.value, id: option4.id}
             ]
         };
 
@@ -68,9 +68,18 @@ class QuizCreator extends Component {
         })
     };
 
-    createQuizHandler = event => {
-        event.preventDefault();
-        // TODO add firebase?
+    createQuizHandler = async event => {
+        try {
+            await axios.post("quizes.json", this.state.quiz);
+            this.setState({
+                quiz: [],
+                rightAnswerId: 1,
+                formControls: createFormControls(),
+                isFormValid: false
+            })
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     onChangeHandler = (value, controlName) => {

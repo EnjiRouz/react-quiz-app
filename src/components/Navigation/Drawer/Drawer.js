@@ -5,7 +5,7 @@ import Backdrop from "../../UI/Backdrop/Backdrop";
 
 const links = [
     {to: "/", label: "Home", exact: true},
-    {to: "/auth", label: "Login", exact: false},
+    {to: "/auth", label: "Log In", exact: false},
     {to: "/quiz-creator", label: "Create Quiz", exact: false}
 ];
 

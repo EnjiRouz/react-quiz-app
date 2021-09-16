@@ -1,0 +1,27 @@
+.Select {
+    margin-bottom: 15px;
+}
+
+.Select label {
+    display: block;
+
+    margin: 0 0 3px 0;
+    padding: 0;
+
+    font-weight: bold;
+}
+
+.Select select {
+    display: block;
+
+    width: 100%;
+    height: 29px;
+    margin: 0 0 5px;
+
+    box-sizing: border-box;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}

@@ -14,14 +14,27 @@ export function auth(email, password, isLogIn) {
 
         const response = await axios.post(isLogIn ? loginUrl : signUpUrl, authData);
         const data = response.data;
-        const expirationDate = new Date(new Date().getTime() + data.expiresIn * 100);
+        const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000);
 
         localStorage.setItem("token", data.idToken);
-        localStorage.setItem("userId", data.localId);
         localStorage.setItem("expirationDate", expirationDate);
 
         dispatch(authSucceed(data.idToken));
         dispatch(autoLogout(data.expiresIn));
+    }
+}
+
+export function autoLogin() {
+    return dispatch => {
+        const token = localStorage.getItem("token");
+        const expirationDate = new Date(localStorage.getItem("expirationDate"));
+
+        if (!token || expirationDate <= new Date())
+            dispatch(logout());
+        else {
+            dispatch(authSucceed(token));
+            dispatch(autoLogout((expirationDate.getTime() - new Date().getTime()) / 1000));
+        }
     }
 }
 
@@ -33,13 +46,6 @@ export function autoLogout(timeInSeconds) {
     }
 }
 
-export function authSucceed(authToken) {
-    return {
-        type: AUTH_SUCCEED,
-        authToken: authToken
-    }
-}
-
 export function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
@@ -47,5 +53,12 @@ export function logout() {
 
     return {
         type: AUTH_LOGOUT
+    }
+}
+
+export function authSucceed(authToken) {
+    return {
+        type: AUTH_SUCCEED,
+        authToken: authToken
     }
 }

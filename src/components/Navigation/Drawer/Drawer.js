@@ -3,18 +3,12 @@ import {NavLink} from "react-router-dom";
 import classes from "./Drawer.module.css";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
-const links = [
-    {to: "/", label: "Home", exact: true},
-    {to: "/auth", label: "Log In", exact: false},
-    {to: "/quiz-creator", label: "Create Quiz", exact: false}
-];
-
 class Drawer extends Component {
     clickHandler = () => {
         this.props.onClose();
     };
 
-    renderLinks() {
+    renderLinks(links) {
         return links.map((link, index) => {
             return (
                 <li key={index}>
@@ -36,11 +30,19 @@ class Drawer extends Component {
         if (!this.props.isMenuOpen)
             classNames.push(classes.close);
 
+        const links = [{to: "/", label: "Home", exact: true}];
+
+        if (this.props.isAuthenticated) {
+            links.push({to: "/quiz-creator", label: "Create Quiz", exact: false});
+            links.push({to: "/logout", label: "Log Out", exact: false});
+        } else
+            links.push({to: "/login", label: "Log In", exact: false});
+
         return (
             <React.Fragment>
                 <nav className={classNames.join(" ")}>
                     <ul>
-                        {this.renderLinks()}
+                        {this.renderLinks(links)}
                     </ul>
                 </nav>
                 {this.props.isMenuOpen ? <Backdrop onClick={this.props.onClose}/> : null}

@@ -51,7 +51,7 @@ export function fetchQuizById(quizId) {
 
 export function quizAnswerClick(answerId) {
     return (dispatch, getState) => {
-        const state = getState().quiz;
+        const state = getState().currentQuiz;
 
         // prevent event handles twice (on each click)
         let currentState = state.answerState;
@@ -140,7 +140,7 @@ export function finishQuiz() {
 
 export function retryQuiz() {
     return (dispatch, getState) => {
-        const state = getState().quiz;
+        const state = getState().currentQuiz;
         dispatch(resetQuizState(state.quiz[0]));
     }
 }

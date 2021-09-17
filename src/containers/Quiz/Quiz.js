@@ -51,13 +51,13 @@ class Quiz extends Component {
 
 function mapStateToProps(state) {
     return {
-        activeQuestionNumber: state.quiz.activeQuestionNumber,
-        isQuizFinished: state.quiz.isQuizFinished,
-        answerState: state.quiz.answerState, // { [id]: "success"/"error" } - current state
-        results: state.quiz.results, // { [id]: "success"/"error" } - all first states
-        quiz: state.quiz.quiz,
-        currentQuizQuestion: state.quiz.currentQuizQuestion,
-        isLoading: state.quiz.isLoading
+        activeQuestionNumber: state.currentQuiz.activeQuestionNumber,
+        isQuizFinished: state.currentQuiz.isQuizFinished,
+        answerState: state.currentQuiz.answerState, // { [id]: "success"/"error" } - current state
+        results: state.currentQuiz.results, // { [id]: "success"/"error" } - all first states
+        quiz: state.currentQuiz.quiz,
+        currentQuizQuestion: state.currentQuiz.currentQuizQuestion,
+        isLoading: state.currentQuiz.isLoading
     }
 }
 

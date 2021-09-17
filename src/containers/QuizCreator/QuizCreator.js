@@ -70,7 +70,7 @@ class QuizCreator extends Component {
 
     createQuizHandler = async event => {
         try {
-            await axios.post("quizes.json", this.state.quiz);
+            await axios.post("quizList.json", this.state.quiz);
             this.setState({
                 quiz: [],
                 rightAnswerId: 1,

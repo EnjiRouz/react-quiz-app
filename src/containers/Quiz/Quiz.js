@@ -17,7 +17,7 @@ class Quiz extends Component {
 
     async componentDidMount() {
         try {
-            const response = await axios.get(`quizes/${this.props.match.params.id}.json`);
+            const response = await axios.get(`quizList/${this.props.match.params.id}.json`);
             const quiz = response.data;
 
             this.setState({

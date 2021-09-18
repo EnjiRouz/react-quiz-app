@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# React.js Quiz App
+React.js App for Quiz creating and taking quizes with multiple answers. Made using Firebase, React, Redux and Router. 
+
+Deployed on Firebase with write rules disabled.
+
+## Try it on Firebase: https://react-quiz-app-c469d.web.app/
+    It's firebase hosting, don't you worry about such a strange domain, I'm just too lazy to change it 😁
+
+Choose a quiz to start or you can create your own quiz after authorization provided by Firebase API:
+
+    Sign up and sign in functions disabled at the momemt, but you still can use this code for your own apps creation
+
+<img src="https://user-images.githubusercontent.com/26218291/133905980-61c098f2-3e55-4726-ba9a-f123fc4373fa.png" alt="Login Feature" width="700">
+
+Quiz has realtime checks for the right answer:
+
+<img src="https://user-images.githubusercontent.com/26218291/133905985-1ecae44c-d450-4c59-a5f8-ba8d71c64e3e.png" alt="Quiz Realtime Check Feature" width="700">
+<img src="https://user-images.githubusercontent.com/26218291/133905987-58c5b658-f3f8-45de-ba1e-dcaae04d600b.png" alt="Quiz Realtime Check Feature" width="700">
+
+Quiz has results to help you find mistakes those have been made while taking a quiz:
+
+<img src="https://user-images.githubusercontent.com/26218291/133905988-7c66d339-f428-4ed9-af6e-ae2db555124d.png" alt="Quiz Results" width="700">
+
+
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,0 +1,109 @@
+{
+  "quizList" : {
+    "-MjjLFvq58q4LwN010sa" : [ {
+      "answers" : [ {
+        "id" : 1,
+        "text" : "Blue"
+      }, {
+        "id" : 2,
+        "text" : "Yellow"
+      }, {
+        "id" : 3,
+        "text" : "Green"
+      }, {
+        "id" : 4,
+        "text" : "Grey"
+      } ],
+      "id" : 1,
+      "question" : "What color is the sun?",
+      "rightAnswerId" : 2
+    } ],
+    "-MjjXHkaualSRXuMjhos" : [ {
+      "answers" : [ {
+        "id" : 1,
+        "text" : "Red"
+      }, {
+        "id" : 2,
+        "text" : "Blue"
+      }, {
+        "id" : 3,
+        "text" : "Green"
+      }, {
+        "id" : 4,
+        "text" : "Yellow"
+      } ],
+      "id" : 1,
+      "question" : "What color is banana?",
+      "rightAnswerId" : 4
+    }, {
+      "answers" : [ {
+        "id" : 1,
+        "text" : "12"
+      }, {
+        "id" : 2,
+        "text" : "8"
+      }, {
+        "id" : 3,
+        "text" : "6"
+      }, {
+        "id" : 4,
+        "text" : "4"
+      } ],
+      "id" : 2,
+      "question" : "How much is 3*(2+2)?",
+      "rightAnswerId" : 1
+    } ],
+    "-MjpAukP7Ogp_xPCfkp1" : [ {
+      "answers" : [ {
+        "id" : 1,
+        "text" : "Sunny"
+      }, {
+        "id" : 2,
+        "text" : "Rainy"
+      }, {
+        "id" : 3,
+        "text" : "Windy"
+      }, {
+        "id" : 4,
+        "text" : "Cloudy"
+      } ],
+      "id" : 1,
+      "question" : "What is the proper name for \"wet weather\"?",
+      "rightAnswerId" : 2
+    }, {
+      "answers" : [ {
+        "id" : 1,
+        "text" : "Draw"
+      }, {
+        "id" : 2,
+        "text" : "Listen"
+      }, {
+        "id" : 3,
+        "text" : "Read"
+      }, {
+        "id" : 4,
+        "text" : "Eat"
+      } ],
+      "id" : 2,
+      "question" : "What can you do with a book?",
+      "rightAnswerId" : 3
+    }, {
+      "answers" : [ {
+        "id" : 1,
+        "text" : "Bird"
+      }, {
+        "id" : 2,
+        "text" : "Fish"
+      }, {
+        "id" : 3,
+        "text" : "Crocodile"
+      }, {
+        "id" : 4,
+        "text" : "Cat"
+      } ],
+      "id" : 3,
+      "question" : "What animal can fly?",
+      "rightAnswerId" : 1
+    } ]
+  }
+}

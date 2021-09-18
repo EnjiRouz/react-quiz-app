@@ -9,8 +9,9 @@ export function auth(email, password, isLogIn) {
             returnSecureToken: true
         };
 
-        const loginUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD_Nt0gWgkjXb09KWmoUfz-vcrKe2R9k2Q";
-        const signUpUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD_Nt0gWgkjXb09KWmoUfz-vcrKe2R9k2Q";
+        const FIREBASE_API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
+        const loginUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_API_KEY}`;
+        const signUpUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_API_KEY}`;
 
         const response = await axios.post(isLogIn ? loginUrl : signUpUrl, authData);
         const data = response.data;
@@ -48,7 +49,6 @@ export function autoLogout(timeInSeconds) {
 
 export function logout() {
     localStorage.removeItem("token");
-    localStorage.removeItem("userId");
     localStorage.removeItem("expirationDate");
 
     return {
